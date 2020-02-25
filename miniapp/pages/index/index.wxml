@@ -1,0 +1,123 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+    <image class="header_bg" mode="widthFix" src="../../images/index.png"></image>
+    <view class="header" style="{{header_style}}">
+        <image class="share_svg" src="../../images/share_fff.svg"></image>
+    </view>
+    <view class="add_group">
+        <view class="user_avatar">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="group_info">
+            <view class="group_name">一润一达健康小组成员</view>
+            <view class="group_detail">
+                <view class="group__days">成功打卡
+                    <text>32</text> 天</view>
+                <text class="group__tag">打卡记录</text>
+            </view>
+        </view>
+    </view>
+
+    <form class="form_list" bindsubmit="formSubmit">
+        <text class="form__title">基本信息</text>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 姓名</view>
+            <input name="name" maxlength="10" placeholder="请输入真实姓名" />
+        </view>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 性别</view>
+            <picker name="gender" bindchange="bindPickerGender" value="{{gender}}" range="{{genderList}}">
+                <view class="picker {{gender?'':'no_picker'}}">
+                    <text>{{gender?gender:'请选择性别'}}</text>
+                    <text class="piecker_tag">选择</text>
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 手机号</view>
+            <input type="number" name="phone" maxlength="11" placeholder="请输入手机号" />
+        </view>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 工号</view>
+            <input name="jobNum" placeholder="请输入工号" />
+        </view>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 当前所在地</view>
+            <picker mode="region" name="region" bindchange="bindPickerRegion" value="{{regionList}}">
+                <view class="picker {{region?'':'no_picker'}}">
+                    <text>{{region?region:'请选择所在地'}}</text>
+                    <text class="piecker_tag">选择</text>
+                </view>
+            </picker>
+        </view>
+
+        <text class="form__title">健康状况</text>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 今日体温(摄氏度)</view>
+            <input type="digit" name="bodyTemp" placeholder="请准确输入今日体温" />
+        </view>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 今日个人状态</view>
+            <radio-group class="status_group" name="status" bindchange="radioStatusChange">
+                <radio color="#3B82C5" wx:for-items="{{statusList}}" wx:key="index" value="{{item}}">
+                    <text>{{item}}</text>
+                </radio>
+            </radio-group>
+        </view>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 是否存在以下症状</view>
+            <checkbox-group class="status_group" name="symptom" bindchange="checkedSymptom">
+                <checkbox color="#3B82C5" wx:for-items="{{symptomList}}" wx:key="index" value="{{item}}">
+                    <text>{{item}}</text>
+                </checkbox>
+            </checkbox-group>
+        </view>
+        <view class="section">
+            <view class="section__title">如有其他症状(不超过30字)</view>
+            <textarea name="other" maxlength="30" class="textarea" placeholder="请简要描述其他症状" />
+        </view>
+
+        <text class="form__title">其他关键信息</text>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 家属健康情况</view>
+            <picker name="family" bindchange="bindPickerFamily" value="{{family}}" range="{{familyList}}">
+                <view class="picker {{family?'':'no_picker'}}">
+                    <text>{{family?family:'请选择家属健康情况'}}</text>
+                    <text class="piecker_tag">选择</text>
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <view class="section__title">
+                <text>*</text> 所在社区情况</view>
+            <picker name="community" bindchange="bindPickerCommunity" value="{{community}}" range="{{communityList}}">
+                <view class="picker {{community?'':'no_picker'}}">
+                    <text>{{community?community:'请选所在社区情况'}}</text>
+                    <text class="piecker_tag">选择</text>
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <view class="section__title">如家属/社区存在疑似/确证病例</view>
+            <textarea name="otherInfo" maxlength="30" class="textarea" placeholder="请简要描述具体情况" />
+        </view>
+
+        <view class="terms">
+            <checkbox-group name="isTerms" bindchange="checkedTerms">
+                <checkbox value="true" color="#3B82C5">
+                    <text class="terms_text">我已知晓本次健康打卡的所列事项，并保证以上填写内容正确属实</text>
+                </checkbox>
+            </checkbox-group>
+            <button class="terms_btn" formType="submit" disabled="{{disabled}}">提交</button>
+        </view>
+    </form>
+</view>
