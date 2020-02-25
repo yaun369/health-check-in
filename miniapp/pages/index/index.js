@@ -30,7 +30,7 @@ Page({
         let top = menuInfo.top;
         let left = modelInfo.windowWidth - menuInfo.right;
         this.setData({
-            header_style: `margin:${top}px ${left}px;height:${menuInfo.height}px`
+            header_style: `margin-top:${top}px;height:${menuInfo.height}px`
         })
     },
 

@@ -183,3 +183,26 @@ page {
     color: #fff;
     background: #3b82c5;
 }
+
+.footer {
+    margin: 40rpx auto 60rpx;
+    display: flex;
+    align-items: center;
+    color: #8c8c8c;
+}
+
+.footer button, .header button {
+    color: #8c8c8c;
+    margin: 0 8rpx;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    border: none;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer button::after, .header button::after {
+    border: none;
+}

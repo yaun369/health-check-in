@@ -2,7 +2,9 @@
 <view class="container">
     <image class="header_bg" mode="widthFix" src="../../images/index.png"></image>
     <view class="header" style="{{header_style}}">
-        <image class="share_svg" src="../../images/share_fff.svg"></image>
+        <button open-type="share">
+            <image class="share_svg" src="../../images/share_fff.svg"></image>
+        </button>
     </view>
     <view class="add_group">
         <view class="user_avatar">
@@ -41,8 +43,7 @@
             <input type="number" name="phone" maxlength="11" placeholder="请输入手机号" />
         </view>
         <view class="section">
-            <view class="section__title">
-                <text>*</text> 工号</view>
+            <view class="section__title">工号</view>
             <input name="jobNum" placeholder="请输入工号" />
         </view>
         <view class="section">
@@ -120,4 +121,10 @@
             <button class="terms_btn" formType="submit" disabled="{{disabled}}">提交</button>
         </view>
     </form>
+
+    <view class="footer">
+        <button open-type="share">分享好友</button> |
+        <button open-type="contact">联系客服</button> |
+        <button>创建小组</button>
+    </view>
 </view>
