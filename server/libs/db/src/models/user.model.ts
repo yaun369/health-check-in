@@ -1,5 +1,5 @@
-import { prop, modelOptions } from '@typegoose/typegoose';
-import { ApiProperty } from '@nestjs/swagger';
+import { prop, modelOptions } from '@typegoose/typegoose'
+import { ApiProperty } from '@nestjs/swagger'
 
 @modelOptions({
     schemaOptions: {
@@ -9,22 +9,26 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class User {
     @ApiProperty({ description: 'openid', example: 'test_openid' })
-    @prop({ unique: true })
-    openid: string;
+    @prop({ unique: true, required: true })
+    openid: string
 
     @ApiProperty({ description: '姓名', example: 'Geek' })
     @prop()
-    name: string;
+    name: string
 
     @ApiProperty({ description: '性别', example: '男' })
     @prop()
-    gender: string;
+    gender: string
 
     @ApiProperty({ description: '手机号', example: '13323451234' })
     @prop()
-    phone: string;
+    phone: string
 
     @ApiProperty({ description: '工号', example: 'SG1233' })
     @prop()
-    jobNum: string;
+    jobNum: string
+
+    @ApiProperty({ description: '所属小组id', example: '5e5532f15366290841f23bea' })
+    @prop()
+    groupId: string
 }

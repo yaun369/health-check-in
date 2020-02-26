@@ -1,3 +1,5 @@
+import http from '../../utils/api.js';
+import util from '../../utils/util.js'
 // pages/index/index.js
 Page({
 
@@ -11,7 +13,7 @@ Page({
         statusList: ["正常", "居家健康观察", "集中隔离", "医学观察", "在院治疗"],
         symptomList: ["自觉正常", "发热37.3℃以下", "发热37.3℃含以上", "干咳", "乏力", "如有其他症状"],
         familyList: ["正常", "存在疑似病例", "存在确证病例"],
-        communityList: ["正常","存在疑似病例","存在确证病例"]
+        communityList: ["正常", "存在疑似病例", "存在确证病例"]
     },
 
     /**
@@ -48,11 +50,11 @@ Page({
     },
 
     radioStatusChange(e) {
-        console.log(e.detail.value)
+        // console.log(e.detail.value)
     },
 
     checkedSymptom(e) {
-        console.log(e.detail.value)
+        // console.log(e.detail.value)
     },
 
     bindPickerFamily(e) {
@@ -74,10 +76,87 @@ Page({
     },
 
     formSubmit: function(e) {
-        console.log(e.detail.value)
         let {
-            isTerms
+            name,
+            gender,
+            phone,
+            jobNum,
+            region,
+            bodyTemp,
+            status,
+            other,
+            symptom,
+            family,
+            community,
+            otherInfo
         } = e.detail.value;
+        const verify = [{
+            value: name,
+            text: "请输入姓名"
+        }, {
+            value: gender,
+            text: "请选择性别"
+        }, {
+            value: phone,
+            text: "请输入手机号"
+        }, {
+            value: region.length,
+            text: "请选择所在地"
+        }, {
+            value: bodyTemp,
+            text: "请输入体温"
+        }, {
+            value: status,
+            text: "请选择状态"
+        }, {
+            value: symptom.length,
+            text: "请选择症状"
+        }, {
+            value: family,
+            text: "请选择家属情况"
+        }, {
+            value: community,
+            text: "请选择社区情况"
+        }]
+        let isValue = verify.findIndex(ele => !ele.value);
+        if (isValue != -1) {
+            wx.showToast({
+                title: verify[isValue].text,
+                icon: 'none'
+            })
+        } else {
+            this.putUsers(e.detail.value);
+        }
+    },
+
+    putUsers(data) {
+        let userInfo = wx.getStorageSync("userInfo");
+        http.put(`users/${userInfo._id}`, data).then(res => {
+            wx.setStorageSync('userInfo', res.data);
+
+            http.post(`details`, Object.assign(data, {
+                user: res.data,
+                time: util.formatTime(new Date())
+            })).then(ress => {
+                wx.showToast({
+                    title: '打卡成功',
+                    icon: 'none'
+                })
+            })
+        })
+    },
+
+    creatGroup() {
+        wx.showToast({
+            title: '正在开发中',
+            icon: 'none'
+        })
+    },
+
+    toDetails() {
+        wx.navigateTo({
+            url: `/pages/list/index`
+        })
     },
 
     /**
@@ -119,6 +198,8 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function() {
-
+        return {
+            title: '全民健康打卡'
+        }
     }
 })

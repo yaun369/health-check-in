@@ -160,7 +160,14 @@ page {
 }
 
 .terms {
-    margin-top: 40rpx;
+    margin-top: 18rpx;
+}
+
+.terms_tag {
+    font-size: 28rpx;
+    color: #3b82c5;
+    margin-left: 18rpx;
+    line-height: 2;
 }
 
 .terms checkbox .wx-checkbox-input {
@@ -179,7 +186,7 @@ page {
 
 .terms_btn {
     border: none;
-    margin-top: 26rpx;
+    margin-top: 60rpx;
     color: #fff;
     background: #3b82c5;
 }
