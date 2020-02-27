@@ -8,6 +8,9 @@ Page({
   data: {
     total: 0,
     disabled: true,
+    nickName: '坚持健康打卡',
+    avatarUrl:'../../images/happy.svg',
+    gender:'',
     genderList: ["男", "女"],
     regionList: [],
     statusList: ["正常", "居家健康观察", "集中隔离", "医学观察", "在院治疗"],
@@ -19,7 +22,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    let that = this;
+    tt.getUserInfo({
+      success(res) {
+        console.log(res.userInfo);
+        let { avatarUrl, nickName } = res.userInfo;
+        that.setData({
+          avatarUrl,
+          nickName
+        })
+      },
+      fail(res) {
+        console.log(`getUserInfo 调用失败`);
+      }
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -162,15 +180,12 @@ Page({
    */
   onShow: function () {
     let userInfo = tt.getStorageSync("userInfo");
-    let {
-      gender
-    } = userInfo;
 
     if (userInfo) {
       http.get(`details?query={"where":{"openid":"${userInfo.openid}"}}`).then(res => {
         this.setData({
           userInfo,
-          gender,
+          gender: userInfo.gender,
           total: res.data.total
         });
       });
@@ -180,22 +195,22 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {},
+  onHide: function () { },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {},
+  onUnload: function () { },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {},
+  onPullDownRefresh: function () { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {},
+  onReachBottom: function () { },
 
   /**
    * 用户点击右上角分享

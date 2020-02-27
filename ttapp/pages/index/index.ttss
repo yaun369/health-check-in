@@ -170,18 +170,10 @@ page {
     line-height: 2;
 }
 
-.terms checkbox .wx-checkbox-input {
-    margin-left: 16rpx;
-    flex-basis: 38rpx;
-    width: 30rpx;
-    height: 30rpx;
-    border: 2rpx #3b82c5 solid;
-}
-
 .terms_text {
     color: #ea5849;
     font-size: 28rpx;
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 .terms_btn {
@@ -212,4 +204,9 @@ page {
 
 .footer button::after, .header button::after {
     border: none;
+}
+
+.status_row{
+    display: flex;
+    align-items: center;
 }

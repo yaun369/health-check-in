@@ -1,18 +1,16 @@
 <!--pages/index/index.ttml-->
 <view class="container">
-    <image class="header_bg" mode="widthFix" src="../../images/index.png"></image>
-    <view class="header" style="{{header_style}}">
-        <button open-type="share">
+	<image class="header_bg" mode="widthFix" src="../../images/index.png"></image>
+	<view class="header" style="{{header_style}}">
+		<button open-type="share">
             <image class="share_svg" src="../../images/share_fff.svg"></image>
         </button>
     </view>
     <view class="add_group">
-        <view class="user_avatar">
-            <open-data type="userAvatarUrl"></open-data>
-        </view>
+        <image class="user_avatar" src="{{avatarUrl}}" mode="aspectFit" />
         <view class="group_info">
             <view class="group_name">
-                <open-data type="userNickName"></open-data>，坚持健康打卡
+                {{nickName}}
             </view>
             <view class="group_detail">
                 <view class="group__days">成功打卡
@@ -67,20 +65,21 @@
         </view>
         <view class="section">
             <view class="section__title">
-                <text>*</text> 今日个人状态</view>
+                <text>*</text> 今日个人状态(单选)</view>
             <radio-group class="status_group" name="status" bindchange="radioStatusChange">
-                <radio color="#3B82C5" tt:for-items="{{statusList}}" tt:key="index" value="{{item}}">
+                <label class="status_row" tt:for="{{statusList}}" tt:key="{{item}}">
+                    <radio color="#3B82C5" value="{{item}}" />
                     <text>{{item}}</text>
-                </radio>
+                </label>
             </radio-group>
         </view>
         <view class="section">
-            <view class="section__title">
-                <text>*</text> 是否存在以下症状</view>
+            <view class="section__title"><text>*</text> 是否存在以下症状(多选)</view>
             <checkbox-group class="status_group" name="symptom" bindchange="checkedSymptom">
-                <checkbox color="#3B82C5" tt:for-items="{{symptomList}}" tt:key="index" value="{{item}}">
+                <label class="status_row" tt:for="{{symptomList}}" tt:key="{{item}}">
+                    <checkbox color="#3B82C5" value="{{item}}"/>
                     <text>{{item}}</text>
-                </checkbox>
+                </label>
             </checkbox-group>
         </view>
         <view class="section">
@@ -117,9 +116,10 @@
         <view class="terms">
             <text class="terms_tag">每日可打卡多次，以当日最后一次提交为准。</text>
             <checkbox-group bindchange="checkedTerms">
-                <checkbox value="true" color="#3B82C5">
+                <label class="status_row">
+                    <checkbox value="true" color="#3B82C5" />
                     <text class="terms_text">我已知晓本次健康打卡的所列事项，并保证以上填写内容正确属实。</text>
-                </checkbox>
+                </label>
             </checkbox-group>
             <button class="terms_btn" formType="submit" disabled="{{disabled}}">提交</button>
         </view>
