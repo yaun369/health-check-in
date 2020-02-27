@@ -1,0 +1,24 @@
+/* components/no-data/index.wxss */
+
+.no-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-more__img {
+    width: 300rpx;
+    height: 292rpx;
+}
+
+.no-more__tip {
+    margin-bottom: 40rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.no-xunj {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: #7e8da6;
+}

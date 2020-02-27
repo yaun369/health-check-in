@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+    "usingComponents": {
+        "nodata": "/components/no-data/index"
+    }
 }

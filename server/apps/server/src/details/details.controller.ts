@@ -33,12 +33,25 @@ export class DetailsController {
     @Post()
     async details(@Body() data: Detail) {
         let todays = this.formatTime(new Date());
-        let detail = await this.model.findOne({ $or: [{ time: todays, user: data.user }] });
-        if (detail) {
-            detail = await this.model.update(data);
+        let detail = await this.model.find({ time: data.time, openid: data.openid });
+        let res = {};
+        if (detail.length) {
+            await this.model.updateOne({ _id: detail[0]._id }, data);
+            res = {
+                todays,
+                msg: '今日已打卡，数据更新成功',
+                code: 0,
+                data: data
+            }
         } else {
             detail = await this.model.create(data);
+            res = {
+                todays,
+                msg: '今日打卡成功',
+                code: 0,
+                data: detail
+            }
         }
-        return detail;
+        return res;
     }
 }

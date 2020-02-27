@@ -7,6 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        total: 0,
         disabled: true,
         genderList: ["男", "女"],
         regionList: [],
@@ -135,13 +136,15 @@ Page({
             wx.setStorageSync('userInfo', res.data);
 
             http.post(`details`, Object.assign(data, {
-                user: res.data,
+                openid: res.data.openid,
                 time: util.formatTime(new Date())
             })).then(ress => {
-                wx.showToast({
-                    title: '打卡成功',
-                    icon: 'none'
-                })
+                if (ress.data.code == 0) {
+                    wx.showToast({
+                        title: ress.data.msg,
+                        icon: 'none'
+                    })
+                }
             })
         })
     },
@@ -163,7 +166,19 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        let userInfo = wx.getStorageSync("userInfo");
+        let {
+            gender
+        } = userInfo;
+        if (userInfo) {
+            http.get(`details?query={"where":{"openid":"${userInfo.openid}"}}`).then(res => {
+                this.setData({
+                    userInfo,
+                    gender,
+                    total: res.data.total
+                })
+            })
+        }
     },
 
     /**
@@ -199,7 +214,9 @@ Page({
      */
     onShareAppMessage: function() {
         return {
-            title: '全民健康打卡'
+            title: '全民健康打卡',
+            path: `/pages/index/index`,
+            imageUrl: '../../images/index.png'
         }
     }
 })

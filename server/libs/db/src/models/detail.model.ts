@@ -10,13 +10,13 @@ import { User } from './user.model'
 
 export class Detail {
 
-    @ApiProperty({ description: '日期', example: "2020-02-26" })
+    @ApiProperty({ description: '日期', example: "2020/02/26" })
     @prop()
     time: string
 
-    @ApiProperty({ description: '用户' })
-    @prop({ ref: 'User' })
-    user:  Ref<User>
+    @ApiProperty({ description: '用户openid', example: "o7tAC0T8jgEzjC-i5L6WUzrCcmkg" })
+    @prop()
+    openid: string
 
     @ApiProperty({ description: '地区', example: ["河北省", "石家庄市", "新华区"] })
     @prop()

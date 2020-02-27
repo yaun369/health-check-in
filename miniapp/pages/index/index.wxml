@@ -16,7 +16,7 @@
             </view>
             <view class="group_detail">
                 <view class="group__days">成功打卡
-                    <text>32</text> 天</view>
+                    <text>{{total}}</text> 天</view>
                 <text class="group__tag" bindtap="toDetails">打卡记录</text>
             </view>
         </view>
@@ -27,7 +27,7 @@
         <view class="section">
             <view class="section__title">
                 <text>*</text> 姓名</view>
-            <input name="name" maxlength="10" placeholder="请输入真实姓名" />
+            <input name="name" value="{{userInfo.name}}" maxlength="10" placeholder="请输入真实姓名" />
         </view>
         <view class="section">
             <view class="section__title">
@@ -42,11 +42,11 @@
         <view class="section">
             <view class="section__title">
                 <text>*</text> 手机号</view>
-            <input type="number" name="phone" maxlength="11" placeholder="请输入手机号" />
+            <input type="number" name="phone" value="{{userInfo.phone}}" maxlength="11" placeholder="请输入手机号" />
         </view>
         <view class="section">
             <view class="section__title">工号</view>
-            <input name="jobNum" placeholder="请输入工号" />
+            <input name="jobNum" value="{{userInfo.jobNum}}" placeholder="请输入工号" />
         </view>
         <view class="section">
             <view class="section__title">
@@ -63,7 +63,7 @@
         <view class="section">
             <view class="section__title">
                 <text>*</text> 今日体温(摄氏度)</view>
-            <input type="digit" name="bodyTemp" placeholder="请准确输入今日体温" />
+            <input type="digit" name="bodyTemp" maxlength="5" placeholder="请准确输入今日体温" />
         </view>
         <view class="section">
             <view class="section__title">
