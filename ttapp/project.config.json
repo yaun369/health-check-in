@@ -1,0 +1,11 @@
+{
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "ttfd938b2e62b9e7d0",
+	"projectname": "健康打卡助手"
+}

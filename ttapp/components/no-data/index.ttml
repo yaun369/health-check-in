@@ -1,0 +1,5 @@
+<!--components/no-data/index.ttml-->
+<view tt:if="{{show}}" class="no-more" style="padding-top:{{top}}rpx;background-color: {{bg}};">
+  <image class='no-more__img' src='../../images/no_data.svg'></image>
+  <view class='no-more__tip'><slot></slot></view>
+</view>

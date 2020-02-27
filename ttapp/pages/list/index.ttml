@@ -1,0 +1,24 @@
+<!--pages/list/index.ttml-->
+<view class="container">
+    <image class="header_bg" mode="widthFix" src="../../images/index.png"></image>
+    <view class="header" style="{{header_style}}" bindtap="bindReturn">
+        <image class="return_svg" src="../../images/return.svg"></image>
+    </view>
+    <view class="details_list">
+        <view class="details_item" tt:for="{{detailsArr}}" tt:key="index">
+            <image src="../../images/{{item.icon}}.svg"></image>
+            <view class="item__text">
+                <text class="item__bodyTemp">{{item.time}} 体温: {{item.bodyTemp}}℃</text>
+                <text class="item__status">当日健康状态: {{item.status}}</text>
+            </view>
+        </view>
+        <nodata top="200" show="{{ detailsArr.length == 0 }}">
+            <view class="no_data__line">暂无数据</view>
+        </nodata>
+    </view>
+    <view class="footer">
+        <button open-type="share">分享好友</button> |
+        <button open-type="contact">联系客服</button> |
+        <button bindtap="creatGroup">创建小组</button>
+    </view>
+</view>

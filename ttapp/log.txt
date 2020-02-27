@@ -1,0 +1,268 @@
+[
+    {
+        "time": "2020-02-27T15:36:58.697Z",
+        "type": "stdOut",
+        "message": "🛠️    Transform source project..."
+    },
+    {
+        "time": "2020-02-27T15:36:58.725Z",
+        "type": "transform wxml file suffix",
+        "file": "no-data/index.wxml",
+        "message": "转换了视图文件后缀, wxml ==> ttml"
+    },
+    {
+        "time": "2020-02-27T15:36:58.725Z",
+        "type": "transform wxss file suffix",
+        "file": "no-data/index.wxss",
+        "message": "转换了样式文件后缀, wxss ==> ttss"
+    },
+    {
+        "time": "2020-02-27T15:36:58.729Z",
+        "type": "transform wxml file suffix",
+        "file": "index/index.wxml",
+        "message": "转换了视图文件后缀, wxml ==> ttml"
+    },
+    {
+        "time": "2020-02-27T15:36:58.729Z",
+        "type": "transform wxss file suffix",
+        "file": "index/index.wxss",
+        "message": "转换了样式文件后缀, wxss ==> ttss"
+    },
+    {
+        "time": "2020-02-27T15:36:58.729Z",
+        "type": "transform wxml file suffix",
+        "file": "list/index.wxml",
+        "message": "转换了视图文件后缀, wxml ==> ttml"
+    },
+    {
+        "time": "2020-02-27T15:36:58.729Z",
+        "type": "transform wxss file suffix",
+        "file": "list/index.wxss",
+        "message": "转换了样式文件后缀, wxss ==> ttss"
+    },
+    {
+        "time": "2020-02-27T15:36:58.781Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/app.js",
+        "row": 5,
+        "column": 23,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.782Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/app.js",
+        "row": 7,
+        "column": 12,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.784Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/app.js",
+        "row": 13,
+        "column": 28,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.818Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 31,
+        "column": 24,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.818Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 32,
+        "column": 23,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.823Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 124,
+        "column": 12,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.823Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 134,
+        "column": 23,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.824Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 136,
+        "column": 12,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.824Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 143,
+        "column": 20,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.824Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 153,
+        "column": 8,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.824Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 160,
+        "column": 8,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.825Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/index/index.js",
+        "row": 169,
+        "column": 23,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.845Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/list/index.js",
+        "row": 14,
+        "column": 8,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.845Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/list/index.js",
+        "row": 18,
+        "column": 8,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.845Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/list/index.js",
+        "row": 25,
+        "column": 23,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.847Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/list/index.js",
+        "row": 49,
+        "column": 24,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.847Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/pages/list/index.js",
+        "row": 50,
+        "column": 23,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.858Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/utils/api.js",
+        "row": 5,
+        "column": 8,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.858Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/utils/api.js",
+        "row": 8,
+        "column": 21,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.859Z",
+        "type": "transform function call arg name",
+        "file": "/Users/geek/Documents/github/health-check-in/ttapp/utils/api.js",
+        "row": 19,
+        "column": 8,
+        "before": "wx",
+        "after": "tt",
+        "message": "转换了上下文, wx ==> tt"
+    },
+    {
+        "time": "2020-02-27T15:36:58.869Z",
+        "type": "stdOut",
+        "message": "🍻    Successfully transform js file"
+    },
+    {
+        "time": "2020-02-27T15:36:58.899Z",
+        "type": "stdOut",
+        "message": "🍻    Successfully transform wxml file"
+    },
+    {
+        "time": "2020-02-27T15:36:58.907Z",
+        "type": "stdOut",
+        "message": "🍻    Successfully transform wxss file"
+    },
+    {
+        "time": "2020-02-27T15:37:01.082Z",
+        "type": "stdOut",
+        "message": "🎊    Congratulations, transform done! Please check transform log in"
+    },
+    {
+        "time": "2020-02-27T15:37:01.082Z",
+        "type": "stdOut",
+        "message": "📝    /Users/geek/Documents/github/health-check-in/ttapp/log.txt"
+    }
+]
