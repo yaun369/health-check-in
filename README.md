@@ -1,2 +1,3 @@
-# health-check-in
-health-check-in
+# 防控疫情，每日健康打卡小程序
+
+包括小程序端和服务端。
