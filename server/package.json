@@ -22,7 +22,7 @@
   "dependencies": {
     "@nestjs/common": "^6.10.14",
     "@nestjs/core": "^6.10.14",
-    "@nestjs/platform-express": "^6.10.14",
+    "@nestjs/platform-express": "^9.2.1",
     "@nestjs/swagger": "^4.3.1",
     "@typegoose/typegoose": "^6.4.0",
     "@types/mongoose": "^5.7.1",
